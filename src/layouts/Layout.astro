@@ -22,19 +22,20 @@ import '../styles/global.css';
     </nav>
 
     <slot />
-	<script>
- 	 	const elements = document.querySelectorAll('.fade-in');
+	<script is:inline>
+  const elements = document.querySelectorAll('.fade-in, .fade-item');
 
-  		const observer = new IntersectionObserver((entries) => {
-    	entries.forEach(entry => {
-      	if (entry.isIntersecting) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-    	  }
-    	});
-  		});
+        observer.unobserve(entry.target);
+      }
+    });
+  });
 
-  		elements.forEach(el => observer.observe(el));
-	</script>
+  elements.forEach(el => observer.observe(el));
+</script>
 
   </body>
 </html>
