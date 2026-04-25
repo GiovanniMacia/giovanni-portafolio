@@ -5,9 +5,8 @@ import Layout from '../layouts/Layout.astro';
 <Layout>
   <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-6 py-4">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="#home" class="flex items-center gap-2 group">
-        <img src="/letrag.svg" class="w-8 h-8 group-hover:rotate-12 transition-transform" alt="Logo G" />
-        <span class="font-bold text-xl tracking-tighter">GIOVANNI</span>
+      <a href="#home" class="flex items-center group">
+        <img src="/letrag.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform" alt="Logo" />
       </a>
       
       <button id="menu-btn" class="md:hidden text-white focus:outline-none">
@@ -32,20 +31,41 @@ import Layout from '../layouts/Layout.astro';
 
   <main class="flex flex-col bg-slate-900 text-white pt-20">
 
-    <section id="home" class="min-h-[85vh] flex items-center justify-center">
+    <section id="home" class="min-h-[70vh] flex items-center justify-center">
       <div class="text-center max-w-3xl mx-4 fade-in">
         <h1 class="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-rose-400 mb-4">
           Giovanni Macia
         </h1>
         <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Analista de Sistemas & Frontend Developer</h2>
-        <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
-          Construyo interfaces modernas y escalables. Estudiante avanzado enfocado en el desarrollo de software de alta calidad.
-        </p>
-
         <div class="flex flex-wrap justify-center gap-4">
           <a href="https://www.linkedin.com/in/giovanni-macia-632a2b359" target="_blank" class="bg-[#0077b5] hover:bg-[#005c8d] text-white font-semibold py-3 px-6 rounded-full transition-all hover:scale-105">LinkedIn</a>
           <a href="https://github.com/GiovanniMacia" target="_blank" class="bg-slate-800 hover:bg-black text-white font-semibold py-3 px-6 rounded-full transition-all hover:scale-105 border border-slate-700">GitHub</a>
           <a href="/CV-Giovanni-Macia-Sistemas.pdf" download class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full transition-all hover:scale-105 shadow-lg shadow-orange-500/20">Descargar CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 max-w-4xl mx-auto">
+      <div class="fade-in">
+        <h2 class="text-3xl font-bold mb-8 text-orange-400 italic">Sobre mí</h2>
+        <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+          Actualmente estoy enfocado en mejorar mis habilidades en <strong>JavaScript</strong> y construir proyectos prácticos que simulen entornos reales de trabajo.
+        </p>
+        <p class="text-lg text-slate-300 mb-10 leading-relaxed">
+          Mi formación en el <strong>IES</strong> y la <strong>UTN</strong>, junto a mi experiencia en <strong>7B Ingeniería</strong>, me otorga un perfil analítico y organizado para el desarrollo de software profesional.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h3 class="text-orange-400 font-bold mb-2 uppercase text-sm tracking-widest">Educación</h3>
+            <p class="text-white font-medium text-lg">Analista de Sistemas</p>
+            <p class="text-slate-400">IES (En curso)</p>
+          </div>
+          <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+            <h3 class="text-orange-400 font-bold mb-2 uppercase text-sm tracking-widest">Certificaciones</h3>
+            <p class="text-white font-medium text-lg">Bases de Datos & Programación</p>
+            <p class="text-slate-400">UTN</p>
+          </div>
         </div>
       </div>
     </section>
@@ -55,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="text-3xl font-bold mb-12 text-center uppercase tracking-widest">Stack Tecnológico</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800">
+          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800 hover:scale-105 transition-transform duration-300">
             <h3 class="text-orange-400 font-bold mb-4 text-xs uppercase tracking-widest">Frontend</h3>
             <div class="flex flex-wrap gap-4">
               <img src="https://api.iconify.design/vscode-icons:file-type-html.svg" class="w-8 h-8" title="HTML5" />
@@ -66,7 +86,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800">
+          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800 hover:scale-105 transition-transform duration-300">
             <h3 class="text-cyan-400 font-bold mb-4 text-xs uppercase tracking-widest">Aprendiendo</h3>
             <div class="flex flex-wrap gap-4">
               <img src="https://api.iconify.design/logos:react.svg" class="w-8 h-8" title="React" />
@@ -75,8 +95,8 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800">
-            <h3 class="text-green-400 font-bold mb-4 text-xs uppercase tracking-widest">Backend (Bases)</h3>
+          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800 hover:scale-105 transition-transform duration-300">
+            <h3 class="text-green-400 font-bold mb-4 text-xs uppercase tracking-widest">Backend</h3>
             <div class="flex flex-wrap gap-4">
               <img src="https://api.iconify.design/logos:nodejs-icon.svg" class="w-8 h-8" title="Node.js" />
               <img src="https://api.iconify.design/logos:express.svg" class="w-8 h-8 bg-white rounded p-1" title="Express" />
@@ -84,12 +104,11 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800">
+          <div class="fade-item bg-slate-800/40 p-6 rounded-2xl border border-slate-800 hover:scale-105 transition-transform duration-300">
             <h3 class="text-purple-400 font-bold mb-4 text-xs uppercase tracking-widest">Herramientas</h3>
             <div class="flex flex-wrap gap-4">
               <img src="https://api.iconify.design/vscode-icons:file-type-git.svg" class="w-8 h-8" title="Git" />
               <img src="https://api.iconify.design/hugeicons:github.svg" class="w-8 h-8 text-white" title="GitHub" />
-              <img src="https://api.iconify.design/logos:axios.svg" class="w-8 h-8" title="Axios" />
             </div>
           </div>
 
@@ -109,11 +128,13 @@ import Layout from '../layouts/Layout.astro';
             <div class="p-8">
               <h3 class="text-2xl font-bold text-white mb-2 italic uppercase">Hupes SRL</h3>
               <p class="text-slate-400 mb-6 text-sm">Sistema de gestión operativa para alquiler de maquinaria vial.</p>
-              <p class="text-[10px] text-slate-500 font-bold uppercase mb-3 tracking-widest">Tecnologías:</p>
+              <p class="text-[10px] text-slate-500 font-bold uppercase mb-3 tracking-widest text-orange-400">Tecnologías:</p>
               <div class="flex gap-4 opacity-70">
-                <img src="https://api.iconify.design/vscode-icons:file-type-js-official.svg" class="w-6 h-6" />
-                <img src="https://api.iconify.design/logos:astro-icon.svg" class="w-6 h-6" />
-                <img src="https://api.iconify.design/vscode-icons:file-type-sql.svg" class="w-6 h-6" />
+                <img src="https://api.iconify.design/vscode-icons:file-type-html.svg" class="w-6 h-6" title="HTML" />
+                <img src="https://api.iconify.design/vscode-icons:file-type-css.svg" class="w-6 h-6" title="CSS" />
+                <img src="https://api.iconify.design/vscode-icons:file-type-js-official.svg" class="w-6 h-6" title="JS" />
+                <img src="https://api.iconify.design/logos:astro-icon.svg" class="w-6 h-6" title="Astro" />
+                <img src="https://api.iconify.design/vscode-icons:file-type-sql.svg" class="w-6 h-6" title="SQL" />
               </div>
             </div>
           </div>
@@ -125,8 +146,10 @@ import Layout from '../layouts/Layout.astro';
             <div class="p-8">
               <h3 class="text-2xl font-bold text-white mb-2 italic uppercase">Soltec</h3>
               <p class="text-slate-400 mb-6 text-sm">Proyecto de branding y soluciones tecnológicas para la comunidad local.</p>
-              <p class="text-[10px] text-slate-500 font-bold uppercase mb-3 tracking-widest">Tecnologías:</p>
+              <p class="text-[10px] text-slate-500 font-bold uppercase mb-3 tracking-widest text-cyan-400">Tecnologías:</p>
               <div class="flex gap-4 opacity-70">
+                <img src="https://api.iconify.design/vscode-icons:file-type-html.svg" class="w-6 h-6" />
+                <img src="https://api.iconify.design/vscode-icons:file-type-css.svg" class="w-6 h-6" />
                 <img src="https://api.iconify.design/vscode-icons:file-type-tailwind.svg" class="w-6 h-6" />
                 <img src="https://api.iconify.design/logos:astro-icon.svg" class="w-6 h-6" />
               </div>
@@ -138,21 +161,25 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <section id="contact" class="py-24 text-center px-6 bg-slate-900">
-      <h2 class="text-3xl font-bold mb-10">¿Hablamos?</h2>
-      <a href="https://wa.me/5493525419426" target="_blank" class="inline-flex items-center gap-3 px-10 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-full transition-all hover:scale-105 shadow-xl mb-12">
-        Enviar WhatsApp
-      </a>
-      
-      <div class="flex justify-center gap-12">
-        <a href="mailto:maciagiovanni4@gmail.com" class="text-slate-400 hover:text-orange-400 transition-all hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <div class="max-w-2xl mx-auto fade-in">
+        <h2 class="text-orange-400 font-bold mb-4 uppercase tracking-widest text-sm">Disponible para oportunidades y proyectos freelance</h2>
+        <p class="text-3xl md:text-4xl font-bold text-white mb-10">¿Tienes una idea? Hablemos y hagámosla realidad.</p>
+        
+        <a href="https://wa.me/5493525419426" target="_blank" class="inline-flex items-center gap-3 px-10 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-full transition-all hover:scale-105 shadow-xl mb-12">
+          Enviar WhatsApp
         </a>
-        <a href="https://github.com/GiovanniMacia" target="_blank" class="text-slate-400 hover:text-white transition-all hover:scale-110">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/giovanni-macia-632a2b359" target="_blank" class="text-slate-400 hover:text-[#0077b5] transition-all hover:scale-110">
-           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
+        
+        <div class="flex justify-center gap-12 pt-6 border-t border-slate-800">
+          <a href="mailto:maciagiovanni4@gmail.com" class="text-slate-400 hover:text-orange-400 transition-all hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+          <a href="https://github.com/GiovanniMacia" target="_blank" class="text-slate-400 hover:text-white transition-all hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/giovanni-macia-632a2b359" target="_blank" class="text-slate-400 hover:text-[#0077b5] transition-all hover:scale-110">
+             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+        </div>
       </div>
     </section>
 
