@@ -7,63 +7,63 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-   <link rel="icon" href="https://api.iconify.design/lucide:gradient-circle.svg" />
+    <link rel="icon" type="image/svg+xml" href="/letrag.svg" />
     <title>Giovanni Macia | Frontend Developer</title>
   </head>
 
-  <body class="bg-slate-900 text-white">
-
-    <nav class="flex justify-center gap-8 p-6 bg-slate-900/70 backdrop-blur-md sticky top-0 z-50 border-b border-slate-800 text-sm font-medium">
-      <a href="#home" class="text-slate-300 hover:text-orange-400 transition">Inicio</a>
-      <a href="#about" class="text-slate-300 hover:text-orange-400 transition">Sobre mí</a>
-      <a href="#skills" class="text-slate-300 hover:text-orange-400 transition">Tecnologías</a>
-      <a href="#projects" class="text-slate-300 hover:text-orange-400 transition">Proyectos</a>
-      <a href="#contact" class="text-slate-300 hover:text-orange-400 transition">Contacto</a>
-    </nav>
-
+  <body class="bg-slate-900 text-white antialiased">
     <slot />
-	<script is:inline>
-  // Animaciones de entrada
-  const elements = document.querySelectorAll('.fade-in, .fade-item');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  });
-  elements.forEach(el => observer.observe(el));
 
-  // Lógica para marcar la sección activa en el Nav
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
+    <script is:inline>
+      // Animaciones de entrada (Optimizadas)
+      const setupAnimations = () => {
+        const elements = document.querySelectorAll('.fade-in, .fade-item');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, { threshold: 0.1 });
+        elements.forEach(el => observer.observe(el));
+      };
 
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => {
-          link.classList.remove('text-orange-400', 'border-b-2', 'border-orange-400');
-          if (link.getAttribute('href').substring(1) === entry.target.id) {
-            link.classList.add('text-orange-400', 'border-b-2', 'border-orange-400');
-          }
-        });
-      }
-    });
-  }, { threshold: 0.5 }); // Se activa cuando la sección ocupa el 50% de la pantalla
+      // Lógica para marcar la sección activa (Nav Highlighter)
+      const setupNavHighlighter = () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
 
-  sections.forEach(section => navObserver.observe(section));
-</script>
+        const navObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              navLinks.forEach(link => {
+                link.classList.remove('text-orange-400');
+                if (link.getAttribute('href') === `#${id}`) {
+                  link.classList.add('text-orange-400');
+                }
+              });
+            }
+          });
+        }, { threshold: 0.4 });
 
+        sections.forEach(section => navObserver.observe(section));
+      };
+
+      // Ejecutar funciones
+      setupAnimations();
+      setupNavHighlighter();
+    </script>
   </body>
 </html>
 
-<style>
+<style is:global>
   html {
     scroll-behavior: smooth;
   }
-
   body {
     margin: 0;
     width: 100%;
+    overflow-x: hidden; /* Evita scrolls horizontales raros en móvil */
   }
 </style>
